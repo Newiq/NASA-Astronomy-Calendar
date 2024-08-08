@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'OArimYvHnyEyDkwcI6boJT9tRN9rTgeoVszHSPvI';
     const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
     const fetchBtn = document.getElementById('birthday_button');
+    const fetchBtnRandom = document.getElementById('random_button')
 
     const fetchPicture = (date) =>{
         const url = date ? `${apiUrl}&date=${date}` : apiUrl;
@@ -33,22 +34,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
     })
+    //add event listener to random day button
+    fetchBtnRandom.addEventListener('click',()=>{
+        const startDate = new Date(1995, 5, 16);//NASA api start day
+        const endDate = new Date();
+        const randomTimestamp = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
+        const randomDate = new Date(randomTimestamp);
 
-    
+        const year = randomDate.getFullYear();
+        const month = String(randomDate.getMonth() + 1).padStart(2, '0');
+        const day = String(randomDate.getDate()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day}`;
+        
+        fetchPicture(formattedDate);
+    })
+
+
     const audio = document.getElementById('background-music');
-    audio.play();
+    // audio.play();
     
     const audioControlButton = document.getElementById('audio-control');
     audioControlButton.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            audioControlButton.textContent = 'Play Music';
+            audioControlButton.textContent = 'Get immersive';
         } else {
             audio.pause();
-            audioControlButton.textContent = 'Stop Music';
+            audioControlButton.textContent = 'Get me out of the space';
         }
     });
+
+    const buttonSound = document.getElementById('button-sound');
+    const birthdayButton = document.getElementById('birthday_button');
+    const randomButton = document.getElementById('random_button');
+
+    const playButtonSound = () => {
+        buttonSound.play();
+    };
+
+    birthdayButton.addEventListener('click', playButtonSound);
+    randomButton.addEventListener('click', playButtonSound);
 });
 
 
-//radom day

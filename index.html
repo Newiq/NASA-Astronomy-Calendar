@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA API Project</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>NASA Astronomy Picture of the Day</h1>
+        <button id="audio-control">Get me out of the space</button>
     </header>
     <main>
         <div class="content-container"> <!--sorry I might take this otu - my mistake-->
             <div id="content">
                 <h2 id="title"></h2>
-                <div class="content-background"> 
+                <div class="content-background">
+                    <img class="space-ship" src="./space-ship.jpg" alt="spaceship window">
                     <img id="image" alt="NASA Astronomy Picture of the Day">
                 </div>
                 <p id="description"></p>
@@ -29,6 +34,8 @@
         <p>Powered by NASA API</p>
         <p>Contributed by Emma Hu, Jessica Hua, Wendy Hu</p>
     </footer>
+    <audio id="background-music" src="./assets/271866__mrpork__era-of-space.ogg" loop>music</audio>
+    <audio id="button-sound" src="./assets/579078__paulfabb__elevator-button.wav"></audio>
     <script src="script.js"></script>
 </body>
 </html>
