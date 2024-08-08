@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
     audioControlButton.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            audioControlButton.textContent = 'Get immersive';
+            audioControlButton.textContent = 'Get me out of the space';
         } else {
             audio.pause();
-            audioControlButton.textContent = 'Get me out of the space';
+            audioControlButton.textContent = 'Get immersive';
         }
     });
 
