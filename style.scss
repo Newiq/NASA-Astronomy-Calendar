@@ -26,6 +26,16 @@ main {
     max-width: 800px;
 }
 
+.content-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 #content {
     background: white;

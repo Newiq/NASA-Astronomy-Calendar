@@ -11,14 +11,23 @@
         <h1>NASA Astronomy Picture of the Day</h1>
     </header>
     <main>
-        <div id="content">
-            <h2 id="title"></h2>
-            <img id="image" alt="NASA Astronomy Picture of the Day">
-            <p id="description"></p>
+        <div class="content-container"> <!--sorry I might take this otu - my mistake-->
+            <div id="content">
+                <h2 id="title"></h2>
+                <div class="content-background"> 
+                    <img id="image" alt="NASA Astronomy Picture of the Day">
+                </div>
+                <p id="description"></p>
+                <label for="birthday">Enter your birthday</label>
+                <input type="date" id="birthday" name="birthday">
+                <button id="birthday_button">Get your picture!</button>
+                <button id="random_button">Random a Picture!</button>
+            </div>
         </div>
     </main>
     <footer>
         <p>Powered by NASA API</p>
+        <p>Contributed by Emma Hu, Jessica Hua, Wendy Hu</p>
     </footer>
     <script src="script.js"></script>
 </body>
